@@ -9,7 +9,11 @@
 
 	<link rel="stylesheet" href="./vendors/css/normalize.css">
 	<link rel="stylesheet" href="./vendors/css/grid.css">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/solid.css" integrity="sha384-Rw5qeepMFvJVEZdSo1nDQD5B6wX0m7c5Z/pLNvjkB14W6Yki1hKbSEQaX9ffUbWe"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/fontawesome.css" integrity="sha384-GVa9GOgVQgOk+TNYXu7S/InPTfSDTtBalSgkgqQ7sCik56N9ztlkoTr2f/T44oKV"
+	 crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" media="screen" href="./resources/css/styles.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="./resources/css/queries.css" />
 </head>
@@ -18,45 +22,72 @@
 	<header>
 		<div class="header-bg left-half"></div>
 		<div class="header-bg right-half"></div>
-		<div class="row header-top">
+		<div class="row">
 			<nav>
 				<div class="row">
-					<a href="#"><img src="./resources/img/logo.png" alt="Digital Elite Logo" class="logo"></a>
-					<ul class="main-nav">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Services</a></li>
-						<li><a href="#">Clients</a></li>
-						<li><a href="#">Contact</a></li>
+					<a href="#">
+						<img src="./resources/img/logo.png" alt="Digital Elite Logo" class="logo js--logo">
+					</a>
+					<ul class="main-nav js--main-nav">
+						<li>
+							<a href="#">Home</a>
+						</li>
+						<li>
+							<a href="#">Services</a>
+						</li>
+						<li>
+							<a href="#">Clients</a>
+						</li>
+						<li>
+							<a href="#">Contact</a>
+						</li>
 					</ul>
+					<a class="mobile-nav-icon js--nav-icon">
+						<i class="fas fa-bars"></i>
+					</a>
 				</div>
 			</nav>
 			<div class="hero-text-box">
-				<h1>We <span class="hero-highlight">digitalise</span><br>your business process.</h1>
+				<h1>We
+					<span class="hero-highlight">digitalise</span>
+					<br>your business process.</h1>
 				<a href="#" class="btn">Learn more</a>
 			</div>
 		</div>
 		<div class="header-bottom">
 			<div class="statistics">
 				<div class="row">
-					<div class="col span-1-of-3">
+					<div class="col span-1-of-3 stats-box">
 						<img src="./resources/img/location.png" alt="Location Icon" class="stats-icon">
-						<p class="stats-number">8</p>
+						<p class="stats-number">
+							<span class="counter">8</span>
+						</p>
 						<p class="stats-description">located in 8 areas</p>
 					</div>
-					<div class="col span-1-of-3">
+					<div class="col span-1-of-3 stats-box">
 						<img src="./resources/img/customer.png" alt="Location Icon" class="stats-icon">
-						<p class="stats-number">2450</p>
+						<p class="stats-number">
+							<span class="counter">2450</span>
+						</p>
 						<p class="stats-description">happy clients last year</p>
 					</div>
-					<div class="col span-1-of-3">
+					<div class="col span-1-of-3 stats-box">
 						<img src="./resources/img/experience.png" alt="Location Icon" class="stats-icon">
-						<p class="stats-number">2935</p>
+						<p class="stats-number">
+							<span class="counter">2935</span>
+						</p>
 						<p class="stats-description">years of combined experience</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</header>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	 crossorigin="anonymous"></script>
+	<script src="./vendors/js/jquery.waypoints.min.js"></script>
+	<script src="./vendors/js/jquery.counterup.min.js"></script>
+	<script src="./resources/js/script.js"></script>
 </body>
 
 </html>

@@ -17,21 +17,21 @@ PINKRED
 /* ================================= */
 
 * {
-	margin: 0;
-	padding: 0;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body {
-	background-color: #DB5461;
-	color: #fff;
-	font-family: 'Open Sans', 'Helvetica', sans-serif;
-	font-size: 20px;
-	font-weight: 300;
-	text-rendering: optimizeLegibility;
-	overflow-x: hidden;
+  background-color: #fff;
+  color: #30343f;
+  font-family: 'Open Sans', 'Helvetica', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 
 /* ================================= */
@@ -41,50 +41,50 @@ body {
 /* ================================= */
 
 .row {
-	width: 1140px;
-	margin: 0 auto;
+  max-width: 1140px;
+  margin: 0 auto;
 }
 
 /* ----- HEADINGS ----- */
 
 h1 {
-	font-size: 180%;
-	font-weight: 300;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	word-spacing: 2px;
-	color: #fff;
-	line-height: 150%;
-	margin-bottom: 30px;
+  font-size: 180%;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  color: #fff;
+  line-height: 150%;
+  margin-bottom: 30px;
 }
 
 /* ----- BUTTONS ----- */
 
 .btn:link,
 .btn:visited {
-	display: inline-block;
-	padding: 10px 35px;
-	background-color: #fff;
-	border: 3px solid #30343F;
-	border-radius: 500px;
-	font-size: 80%;
-	text-decoration: none;
-	text-transform: uppercase;
-	color: #30343F;
-	font-weight: 600;
-	letter-spacing: 1px;
-	word-spacing: 2px;
-	-webkit-box-shadow: 0 2px 2px #363636;
-	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
-	-webkit-transition: background-color 0.2s, color 0.2s, border 0.2s;
-	transition: background-color 0.2s, color 0.2s, border 0.2s;
+  display: inline-block;
+  padding: 10px 35px;
+  background-color: #fff;
+  border: 3px solid #30343f;
+  border-radius: 500px;
+  font-size: 80%;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #30343f;
+  font-weight: 600;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  -webkit-box-shadow: 0 2px 2px #363636;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+  -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+  transition: background-color 0.2s, border 0.2s, color 0.2s;
 }
 
 .btn:hover,
 .btn:active {
-	background-color: #30343F;
-	color: #fff;
-	border: 3px solid #30343F;
+  background-color: #30343f;
+  border: 3px solid #30343f;
+  color: #fff;
 }
 
 /* ================================= */
@@ -94,128 +94,141 @@ h1 {
 /* ================================= */
 
 header {
-	height: 100vh;
-	background-color: #DB5461;
-	position: relative;
+  height: 100vh;
+  background-color: #db5461;
+  position: relative;
 }
 
 .header-bg {
-	position: absolute;
-	height: 100%;
-	z-index: 0;
+  position: absolute;
+  height: 100%;
+  z-index: 0;
 }
 
 .left-half {
-	background-color: #DB5461;
-	width: 50%;
-	left: 0;
+  background-color: #db5461;
+  width: 50%;
+  left: 0;
 }
 
 .right-half {
-	background-image: url('./img/background_header.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: left;
-	-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
-	clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
-	width: 50%;
-	right: 0;
+  background-image: url('./img/background_header.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
+  width: 50%;
+  right: 0;
 }
 
 /* ----- HERO ----- */
 
 .hero-text-box {
-	width: 1140px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
+  width: 1140px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .hero-highlight {
-	color: #30343F;
-	font-weight: 600;
-}
-
-/* ----- HEADER SECTIONS ----- */
-
-.header-bottom {
-	width: 100%;
-	position: absolute;
-	bottom: 0;
-	left: 0;
+  color: #30343f;
+  font-weight: 600;
 }
 
 /* ----- MAIN NAV ----- */
 
 nav {
-	margin-top: 50px;
+  position: relative;
+  margin-top: 50px;
 }
 
 .logo {
-	height: 50px;
-	width: auto;
-	float: left;
-	position: relative;
+  height: 50px;
+  width: auto;
+  float: left;
+  position: relative;
 }
 
 .main-nav {
-	float: right;
-	list-style: none;
-	background-color: #fff;
-	-webkit-box-shadow: 0 2px 2px #969696;
-	box-shadow: 0 2px 2px #969696;
-	position: relative;
-	margin-top: 5px;
-	padding: 8px 25px 8px 10px;
+  float: right;
+  list-style: none;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2px 2px #818181;
+  box-shadow: 0 2px 2px #818181;
+  position: relative;
+  margin-top: 5px;
+  padding: 8px 25px 8px 10px;
 }
 
 .main-nav li {
-	display: inline-block;
-	margin-left: 15px;
+  display: inline-block;
+  margin-left: 15px;
 }
 
 .main-nav li a:link,
 .main-nav li a:visited {
-	text-decoration: none;
-	text-transform: uppercase;
-	font-size: 80%;
-	font-weight: 600;
-	color: #30343F;
-	-webkit-transition: color 0.2s;
-	transition: color 0.2s;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 80%;
+  font-weight: 600;
+  color: #30343f;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
 }
 
 .main-nav li a:hover,
 .main-nav li a:active {
-	color: #999;
+  color: #db5461;
+}
+
+/* ----- MOBILE NAV ----- */
+
+.mobile-nav-icon {
+  float: right;
+  cursor: pointer;
+  position: relative;
+  display: none;
+}
+
+.mobile-nav-icon i {
+  font-size: 200%;
+  color: #30343f;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
 }
 
 /* ----- STATISTICS ----- */
 
+.header-bottom {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
 .statistics {
-	background-color: #30343F;
-	padding: 30px 0;
+  background-color: #30343f;
+  padding: 2% 0 2% 5%;
 }
 
 .stats-icon {
-	height: 35px;
-	width: auto;
-	float: left;
-	margin-right: 10px;
-}
-
-.statistics p {
-	font-size: 85%;
+  height: 35px;
+  width: auto;
+  float: left;
+  margin-right: 10px;
 }
 
 .stats-number {
-	color: #fff;
-	font-weight: 600;
-	margin-bottom: 5px;
+  color: #fff;
+  font-size: 85%;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
 
 .stats-description {
-	color: #999;
+  color: #999;
+  font-size: 75%;
 }

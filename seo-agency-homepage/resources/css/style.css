@@ -18,6 +18,10 @@ BLUE GRADIENT: #1e3c72 - #2a5298
 	box-sizing: border-box;
 }
 
+*:focus {
+	outline: none;
+}
+
 html,
 body {
 	background-color: #fff;
@@ -139,6 +143,7 @@ header {
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
+	position: relative;
 }
 
 .hero-text-box {
@@ -194,6 +199,20 @@ header {
 	border-bottom: 2px solid #fff;
 }
 
+/* ----- MOBILE NAV ----- */
+
+.mobile-nav-icon {
+	float: right;
+	margin-top: 45px;
+	cursor: pointer;
+	display: none;
+}
+
+.mobile-nav-icon i {
+	color: #fff;
+	font-size: 200%;
+}
+
 /* ----- CALL TO ACTION ----- */
 
 .call-to-action {
@@ -211,6 +230,16 @@ header {
 	font-weight: 400;
 	display: inline-block;
 	margin-right: 45px;
+}
+
+/* ----- SEE MORE ICON ----- */
+
+.see-more i {
+	color: #fff;
+	font-size: 150%;
+	position: absolute;
+	top: 82%;
+	left: 50%;
 }
 
 /* ======================= */
@@ -260,12 +289,14 @@ header {
 
 .quotes-slider {
 	width: 100%;
+	list-style: none;
 }
 
 blockquote {
 	width: 80%;
 	margin-left: 10%;
 	padding-top: 20px;
+	padding-left: 20px;
 	font-style: italic;
 	font-size: 90%;
 	line-height: 150%;
@@ -282,12 +313,13 @@ blockquote:before {
 	width: 30px;
 	content: ' ';
 	position: absolute;
-	top: 20px;
-	left: -50px;
+	top: 15px;
+	left: -25px;
 }
 
 cite {
 	display: block;
+	margin-bottom: 40px;
 }
 
 cite img {
@@ -302,12 +334,14 @@ cite img {
 }
 
 .cite-name {
+	display: block;
 	font-size: 80%;
 	font-weight: 600;
 	margin-bottom: 5px;
 }
 
 .cite-job {
+	display: block;
 	font-size: 70%;
 }
 
@@ -342,4 +376,23 @@ footer {
 	text-align: center;
 	padding: 40px;
 	font-size: 80%;
+}
+
+/* ======================= */
+
+/* ANIMATIONS */
+
+/* ======================= */
+
+.animated {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+}
+
+.js--wp-features {
+	opacity: 0;
+}
+
+.js--wp-features.animated {
+	opacity: 1;
 }

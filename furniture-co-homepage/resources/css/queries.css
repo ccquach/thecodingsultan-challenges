@@ -60,16 +60,13 @@
 
 	/*	----- ABOUT ----- */
 	.about-box {
-		display: block;
+		flex-direction: column;
+		margin: 10px 0;
 	}
 	.section-row {
 		padding-left: 40px;
 	}
-	.about-box {
-		margin: 10px 0;
-	}
 	.col {
-		float: none;
 		margin-right: 0;
 		margin-bottom: 3%;
 		width: 100%;
@@ -107,8 +104,7 @@
 	}
 }
 
-@media only screen and (max-width: 550px),
-only screen and (max-height: 400px) {
+@media only screen and (max-width: 550px) {
 	h1 {
 		font-size: 300%;
 	}
@@ -154,7 +150,7 @@ only screen and (max-height: 400px) {
 	.search-form {
 		display: inline-block;
 		position: absolute;
-		top: 90px;
+		top: 100px;
 		right: 20px;
 		margin-top: 0;
 	}
@@ -198,8 +194,13 @@ only screen and (max-height: 400px) {
 		font-size: 250%;
 	}
 
+	.logo {
+		height: 40px;
+	}
+
 	.categories-showcase li {
 		width: 100%;
+		max-height: 200px;
 	}
 
 	footer {
@@ -207,15 +208,26 @@ only screen and (max-height: 400px) {
 	}
 }
 
-@media only screen and (max-height: 450px) and (min-height: 551px) {
-/*
+@media only screen and (max-height: 450px) {
+	h1 {
+		font-size: 250%;
+	}
+
+	.hero-text-box {
+		top: 67%;
+	}
+
+	.search-form {
+		margin-top: 20px;
+	}
+}
+
+@media only screen and (max-height: 350px) {
 	h1 {
 		font-size: 200%;
 	}
 
-	.hero-text-box {
-		top: 65%;
+	.search-form {
+		margin-top: 10px;
 	}
-
-	}
-*/
+}

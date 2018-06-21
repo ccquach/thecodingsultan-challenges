@@ -1,4 +1,9 @@
+var doc = {};
 $(document).ready(function () {
+	doc.nav = $('.js--main-nav');
+	doc.icon = $('.js--nav-icon i');
+	doc.mobileBreakpoint = 550;
+
 	// Categories showcase hover effect
 	$('.js--categories-showcase li').on({
 		mouseenter: function () {
@@ -22,10 +27,16 @@ $(document).ready(function () {
 	// Display search bar
 	$('.js--search-btn').on('click', function (e) {
 		e.preventDefault();
+		var windowWidth = getWindowWidth();
 		if (!$('.js--search-bar').hasClass('active')) {
+			if (windowWidth <= doc.mobileBreakpoint && doc.nav.css('display') !== 'none') {
+				doc.nav.css('display', 'none');
+				doc.icon.addClass('fa-bars');
+				doc.icon.removeClass('fa-times');
+			}
 			$('.js--search-bar').addClass('active');
 			$('.js--search-bar').focus();
-		};
+		}
 	});
 
 	// Smooth scrolling
@@ -59,7 +70,7 @@ $(document).ready(function () {
 						} else {
 							$target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
 							$target.focus(); // Set focus again
-						};
+						}
 					});
 				}
 			}
@@ -69,8 +80,64 @@ $(document).ready(function () {
 	new Waypoint({
 		element: $('.js--feature-boxes'),
 		handler: function () {
-			$('.js--feature-boxes').addClass('animated fadeInUp')
+			$('.js--feature-boxes').addClass('animated fadeInUp');
 		},
 		offset: '70%'
 	});
+
+	// Mobile nav
+	$('.js--nav-icon, .js--logo, .js--main-nav a').click(function (e) {
+		var windowWidth = getWindowWidth();
+		var $clicked = $(e.target);
+
+		if ($clicked.hasClass('js--logo') && doc.icon.hasClass('fa-bars')) return;
+
+		if (windowWidth < doc.mobileBreakpoint) {
+			if ($('.search-bar').hasClass('active')) $('.search-bar').removeClass('active');
+
+			doc.nav.slideToggle(200);
+
+			if (doc.icon.hasClass('fa-bars')) {
+				doc.icon.addClass('fa-times');
+				doc.icon.removeClass('fa-bars');
+			} else {
+				doc.icon.addClass('fa-bars');
+				doc.icon.removeClass('fa-times');
+			}
+		}
+	});
+
+	// Resize window toggle main nav display
+	$(window).resize(function () {
+		var windowWidth = getWindowWidth();
+		if (windowWidth >= doc.mobileBreakpoint) {
+			doc.nav.css('display', 'inline-block');
+		} else {
+			doc.nav.css('display', 'none');
+			doc.icon.addClass('fa-bars');
+			doc.icon.removeClass('fa-times');
+		}
+	});
 });
+
+function scrollbarWidth() {
+	var div = $('<div style="width:50px;height:50px;overflow:hidden;position:absolute;top:-200px;left:-200px;"><div style="height:100px;"></div>');
+	// Append our div, do our calculation and then remove it 
+	$('body').append(div);
+	var w1 = $('div', div).innerWidth();
+	div.css('overflow-y', 'scroll');
+	var w2 = $('div', div).innerWidth();
+	$(div).remove();
+	return (w1 - w2);
+}
+
+function hasScrollbar() {
+	return $(document).height() > $(window).height();
+}
+
+function getWindowWidth() {
+	w = hasScrollbar() ?
+		$(window).width() + scrollbarWidth() :
+		$(window).width();
+	return w;
+}

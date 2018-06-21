@@ -163,11 +163,27 @@ header {
 	color: #4A4A4A;
 }
 
+/* ----- MOBILE NAV ----- */
+
+.mobile-nav-icon {
+	/*	float: right;*/
+	cursor: pointer;
+	position: absolute;
+	top: 40px;
+	right: 20px;
+	display: none;
+}
+
+.mobile-nav-icon i {
+	font-size: 170%;
+	margin-top: -5px;
+}
+
+
 /* ----- SEARCH BAR ----- */
 
 .search-form {
 	display: inline-block;
-	position: relative;
 }
 
 .search-bar {
@@ -177,7 +193,7 @@ header {
 	color: #4A4A4A;
 	display: inline-block;
 	width: 0;
-	height: 0;
+	height: 35px;
 	border: 0;
 	opacity: 0;
 	-webkit-transition: all 0.5s;
@@ -190,7 +206,6 @@ header {
 	border-radius: 3px;
 	padding: 7px 10px;
 	width: 250px;
-	height: 100%;
 	opacity: 1;
 }
 
@@ -198,11 +213,12 @@ header {
 	background-color: transparent;
 	border: 0;
 	cursor: pointer;
+	height: 25px;
 }
 
 .search-btn img {
 	display: inline-block;
-	height: 25px;
+	height: 100%;
 	width: auto;
 	vertical-align: middle;
 	margin-top: -7px;
@@ -292,7 +308,7 @@ header {
 
 .section-categories h2 {
 	margin-bottom: 0;
-	padding: 30px 40px;
+	padding: 35px 0;
 }
 
 .categories-showcase {

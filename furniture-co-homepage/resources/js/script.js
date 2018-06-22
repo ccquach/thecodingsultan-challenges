@@ -8,22 +8,29 @@ $(document).ready(function() {
   smoothScrolling();
 
   // Animate on scroll
-  animateOnScroll();
+  var animateWaypoint = animateOnScroll();
 
   // Categories showcase hover effect
-  handleShowcaseHover();
+  $('.js--categories-showcase li').on({
+    mouseenter: function() {
+      mouseEnterCategory($(this));
+    },
+    mouseleave: function() {
+      mouseLeaveCategory($(this));
+    }
+  });
 
   // Display search bar
-  handleSearchBarDisplay();
+  $('.js--search-btn').on('click', e => handleSearchBarDisplay(e));
 
   // Sticky nav
-  handleStickyNavDisplay();
+  var stickyNavWaypoint = handleStickyNavDisplay();
 
   // Mobile nav
-  handleMobileNavDisplay();
+  $('.js--nav-icon, .js--main-nav a').on('click', handleMobileNavDisplay);
 
   // Resize window toggle main nav display
-  handleWindowResize();
+  $(window).resize(handleWindowResize);
 });
 
 function scrollbarWidth() {
@@ -95,71 +102,54 @@ function smoothScrolling() {
 }
 
 function animateOnScroll() {
-  var waypoint = new Waypoint({
+  return new Waypoint({
     element: $('.js--feature-boxes'),
     handler: function() {
       $('.js--feature-boxes').addClass('animated fadeInUp');
     },
     offset: '70%'
   });
-  return waypoint;
 }
 
-function handleShowcaseHover() {
-  $('.js--categories-showcase li').on({
-    mouseenter: function() {
-      $(this)
-        .find('figcaption')
-        .css({
-          opacity: 1,
-          display: 'none'
-        })
-        .animate(
-          {
-            opacity: 0
-          },
-          500
-        );
-    },
-    mouseleave: function() {
-      $(this)
-        .find('figcaption')
-        .css({
-          opacity: 0,
-          display: 'block'
-        })
-        .animate(
-          {
-            opacity: 1
-          },
-          500
-        );
-    }
-  });
+function mouseEnterCategory($this) {
+  $this
+    .find('figcaption')
+    .css({
+      opacity: 1,
+      display: 'none'
+    })
+    .animate(
+      {
+        opacity: 0
+      },
+      500
+    );
+}
+function mouseLeaveCategory($this) {
+  $this
+    .find('figcaption')
+    .css({
+      opacity: 0,
+      display: 'block'
+    })
+    .animate(
+      {
+        opacity: 1
+      },
+      500
+    );
 }
 
-function handleSearchBarDisplay() {
-  $('.js--search-btn').on('click', function(e) {
-    e.preventDefault();
-    var windowWidth = getWindowWidth();
-    // If mobile view and menu opened, close menu then open search bar
-    if (
-      windowWidth < doc.mobileBreakpoint &&
-      doc.nav.css('display') !== 'none'
-    ) {
-      doc.nav.slideToggle(200);
-      doc.icon.addClass('fa-bars').removeClass('fa-times');
-    }
-
-    // Toggle search bar display
-    $('.js--search-bar')
-      .toggleClass('active')
-      .focus();
-  });
+function handleSearchBarDisplay(e) {
+  e.preventDefault();
+  var windowWidth = getWindowWidth();
+  $('.js--search-bar')
+    .toggleClass('active')
+    .focus();
 }
 
 function handleStickyNavDisplay() {
-  var waypoint = new Waypoint({
+  return new Waypoint({
     element: $('.js--section-about'),
     handler: function(direction) {
       direction === 'down'
@@ -168,37 +158,37 @@ function handleStickyNavDisplay() {
     },
     offset: 60
   });
-  return waypoint;
 }
 
 function handleMobileNavDisplay() {
-  $('.js--nav-icon, .js--logo, .js--main-nav a').click(function(e) {
-    var windowWidth = getWindowWidth();
-    var $clicked = $(e.target);
-
-    if ($clicked.hasClass('js--logo') && doc.icon.hasClass('fa-bars')) return;
-
-    if (windowWidth < doc.mobileBreakpoint) {
-      if ($('.search-bar').hasClass('active'))
-        $('.search-bar').removeClass('active');
-
-      doc.nav.slideToggle(200);
-
-      doc.icon.hasClass('fa-bars')
-        ? doc.icon.addClass('fa-times').removeClass('fa-bars')
-        : doc.icon.addClass('fa-bars').removeClass('fa-times');
+  var windowWidth = getWindowWidth();
+  if (windowWidth < doc.mobileBreakpoint) {
+    if (doc.icon.hasClass('fa-bars')) {
+      doc.icon
+        .addClass('fa-times')
+        .removeClass('fa-bars')
+        .css({
+          position: 'fixed',
+          right: '20px'
+        });
+      doc.nav.addClass('active activated');
+    } else {
+      doc.icon
+        .addClass('fa-bars')
+        .removeClass('fa-times')
+        .css({
+          position: 'absolute',
+          right: '0'
+        });
+      doc.nav.removeClass('active');
     }
-  });
+  }
 }
 
 function handleWindowResize() {
-  $(window).resize(function() {
-    var windowWidth = getWindowWidth();
-    if (windowWidth >= doc.mobileBreakpoint) {
-      doc.nav.css('display', 'inline-block');
-    } else {
-      doc.nav.css('display', 'none');
-      doc.icon.addClass('fa-bars').removeClass('fa-times');
-    }
-  });
+  var windowWidth = getWindowWidth();
+  if (windowWidth < doc.mobileBreakpoint) {
+    doc.nav.removeClass('active activated');
+    doc.icon.addClass('fa-bars').removeClass('fa-times');
+  }
 }

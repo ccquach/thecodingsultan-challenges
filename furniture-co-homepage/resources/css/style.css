@@ -151,8 +151,8 @@ header {
   font-size: 80%;
   font-weight: 600;
   color: #bbb0a3;
-  -webkit-transition: color 0.2s;
-  transition: color 0.2s;
+  -webkit-transition: color 0.2s ease-out;
+  transition: color 0.2s ease-out;
 }
 
 .main-nav li:first-child a:link,
@@ -230,8 +230,8 @@ header {
   height: 35px;
   border: 0;
   opacity: 0;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 .search-bar.active {
@@ -387,10 +387,8 @@ header {
   opacity: 0.8;
   -webkit-transform: scale(1.15);
   transform: scale(1.15);
-  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
-  transition: opacity 0.5s, -webkit-transform 0.5s;
-  transition: opacity 0.5s, transform 0.5s;
-  transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 .category-photo img:hover {

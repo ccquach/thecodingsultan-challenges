@@ -1,0 +1,258 @@
+/* Width queries */
+
+@media only screen and (max-width: 1200px) {
+	.row {
+		padding: 0 3%;
+	}
+
+	.hero-text-box {
+		width: 100%;
+		padding: 0 3%;
+	}
+
+	.main-nav li {
+		margin-left: 20px;
+	}
+
+	.testimonials-box {
+		width: 70%;
+		margin-left: 15%;
+	}
+}
+
+@media only screen and (max-width: 980px) {
+	h2 {
+		font-size: 150%;
+	}
+}
+
+@media only screen and (max-width: 850px) {
+	.col {
+		width: 100%;
+	}
+	.col:not(:last-child) {
+		margin: 0 0 5% 0;
+	}
+
+	section {
+		padding: 60px 0;
+	}
+	.section-testimonials {
+		padding: 0 0 60px 0;
+	}
+
+	.btn:link,
+	.btn:visited {
+		width: 180px;
+		padding: 15px 0;
+		font-size: 70%;
+		font-weight: 600;
+	}
+
+	.feature-box {
+		text-align: left;
+	}
+	.feature-box p {
+		margin-top: 15px;
+	}
+
+	.testimonials-box {
+		width: 80%;
+		margin-left: 10%;
+	}
+	blockquote {
+		padding-top: 10px;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	.call-to-action {
+		padding: 20px;
+	}
+	.action-copy {
+		display: block;
+		margin-right: 0;
+	}
+	.btn:link,
+	.btn:visited {
+		margin-top: 20px;
+	}
+}
+
+@media only screen and (max-width: 767.5px) {
+	html,
+	body {
+		font-size: 18px;
+	}
+
+	section {
+		padding: 40px 0;
+	}
+	.section-testimonials {
+		padding: 0 0 40px 0;
+	}
+
+	.mobile-nav-icon {
+		display: inline-block;
+	}
+	.main-nav {
+		display: none;
+		float: left;
+		margin-left: 40px;
+	}
+	.main-nav li {
+		display: block;
+		margin-left: 0;
+		margin-bottom: 20px;
+	}
+	.main-nav li a:link,
+	.main-nav li a:visited {
+		font-size: 100%;
+		font-weight: 400;
+		border: 0;
+	}
+
+	.testimonials-box {
+		width: 90%;
+		margin-left: 5%;
+	}
+	blockquote:before {
+		top: 5px;
+	}
+}
+
+@media only screen and (max-width: 550px) {
+	.col:not(:last-child) {
+		margin: 0 0 7% 0;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	html,
+	body {
+		font-size: 16px;
+	}
+	.row {
+		padding: 0 7%;
+	}
+
+	.btn:link,
+	.btn:visited {
+		width: 150px;
+		padding: 12px 0;
+	}
+
+	.hero-text-box {
+		text-align: center;
+	}
+	.hero-copy {
+		font-size: 110%;
+	}
+
+	.logo {
+		height: 20px;
+	}
+	.main-nav {
+		margin-left: 20px;
+	}
+	.mobile-nav-icon i {
+		font-size: 140%;
+	}
+
+	.action-copy {
+		line-height: 145%;
+	}
+
+	blockquote {
+		padding-top: 0px;
+	}
+	blockquote:before {
+		background-size: 25px 25px;
+		height: 25px;
+		width: 25px;
+		top: 0;
+		left: -18px;
+	}
+}
+
+@media only screen and (max-width: 350px) {
+	html,
+	body {
+		font-size: 14px;
+	}
+	.col:not(:last-child) {
+		margin: 0 0 10% 0;
+	}
+
+	.logo {
+		height: 15px;
+	}
+	.main-nav li a:link,
+	.main-nav li a:visited {
+		font-size: 90%;
+	}
+	.mobile-nav-icon i {
+		font-size: 120%;
+	}
+
+	blockquote:before {
+		background-size: 20px 20px;
+		height: 20px;
+		width: 20px;
+		left: -10px;
+	}
+}
+
+/* Height queries */
+
+@media only screen and (max-height: 800px) {
+	.see-more i {
+		top: 75%;
+	}
+}
+
+@media only screen and (max-height: 520px) {
+	.see-more i {
+		top: 65%;
+	}
+}
+
+/* Mobile landscape */
+
+@media only screen and (max-height: 420px) {
+	html,
+	body {
+		font-size: 12px;
+	}
+
+	.btn:link,
+	.btn:visited {
+		width: 120px;
+		padding: 10px 0;
+	}
+
+	.logo {
+		height: 20px;
+		margin-top: 25px;
+	}
+	.main-nav {
+		margin-top: 30px;
+	}
+	.main-nav li {
+		display: inline-block;
+		margin-right: 10px;
+	}
+	.mobile-nav-icon {
+		margin-top: 20px;
+	}
+
+	.see-more i {
+		top: 70%;
+	}
+}
+
+@media only screen and (max-height: 375.5px) {
+	.see-more i {
+		top: 60%;
+	}
+}
